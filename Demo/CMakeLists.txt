@@ -9,7 +9,9 @@ set(DemoDir ../Demo)
 
 
 
-add_executable(Demo DemoMain.cpp)
+add_executable(Demo DemoMain.cpp
+        TestingUtilities/GLFWWrappers.cpp
+        TestingUtilities/GLFWWrappers.h)
 
 target_sources(Demo PRIVATE)
 

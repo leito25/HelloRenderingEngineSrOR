@@ -1,16 +1,38 @@
 //
-// Created by ASUS on 8/14/2024.
+// Created by LEOQ on 8/14/2024.
 //
 
-#ifndef GLFWWRAPPERS_H
-#define GLFWWRAPPERS_H
+struct GLFWwindow;
 
 namespace Demo {
+    class window;
 
-class GLFWWrappers {
+    struct [[nodiscard]] glfw_manager
+    {
+        glfw_manager();
 
-};
+        glfw_manager(const glfw_manager&) = delete;
 
-} // Demo
+        glfw_manager& operator=(const glfw_manager&) = delete;
 
-#endif //GLFWWRAPPERS_H
+        ~glfw_manager();
+
+        window create_window();
+    };
+
+    class [[nodiscard]] window
+    {
+        friend glfw_manager;
+
+        GLFWwindow& m_Window;
+
+        window();
+
+        public:
+        window(const window&) = delete;
+        window& operator=(const window&) = delete;
+        ~window();
+
+        [[nodiscard]] GLFWwindow& get() {return m_Window;}
+    };
+}
