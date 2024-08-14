@@ -17,6 +17,6 @@ output/TestsTemporaryData
 output/Prune
 
 #CLion files
-/Demo/cmake-build-debug
-.idea
+/Demo/cmake-build-debug/
+.idea/
 
